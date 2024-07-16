@@ -209,7 +209,7 @@ if input_question:
                 # Get summary for the retrieved data
                 customer_messages = prompt_template.format_messages(
                     question=input_question,
-                    texts=corrected_texts_list[:20])
+                    texts=corrected_texts_list[:15])
 
                 customer_messages_short = prompt_template.format_messages(
                     question=input_question,
@@ -223,7 +223,7 @@ if input_question:
                         st.write_stream(llm_chat.stream(customer_messages))
                         run_id = cb.traced_runs[0].id
                 except Exception as e:
-                    st.write("The texts were too long, we took first 20 for analysis.")
+                    st.write("The texts were too long, we took first 15 for analysis.")
                     with callbacks.collect_runs() as cb:
                         st.write_stream(llm_chat.stream(customer_messages_short))
                         run_id = cb.traced_runs[0].id
