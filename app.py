@@ -49,7 +49,7 @@ st.markdown('App relies on data, collected and enriched by our team and provides
             'answers. \n'
             'If you are running this app from a mobile device, tap on any '
             'empty space to apply changes to input fields. '
-            'If you experience any technical issues, please [submit the form](https://docs.google.com/forms/d/e/1FAIpQLSfZTr4YoXXsjOOIAMVGYCeGgXd6LOsCQusctJ7hZODaW5HzGQ/viewform?pli=1) by selecting "LD app Technical Issue" for '
+            'If you experience any technical issues, please [submit the form](https://docs.google.com/forms/d/e/1FAIpQLSfZTr4YoXXsjOOIAMVGYCeGgXd6LOsCQusctJ7hZODaW5HzGQ/viewform?pli=1) by selecting "AI Chatbot" for '
             'the type of request. To give feedback for request output, '
             'please use the feedback form at the end of the page.')
 
@@ -60,8 +60,8 @@ with st.expander("Learn more about the app"):
     st.markdown(markdown_content, unsafe_allow_html=True)
 
 # Authorise user
-# if not check_password():
-#     st.stop()
+if not check_password():
+    st.stop()
 
 # Get input parameters
 st.markdown('### Please select search parameters ')
@@ -209,14 +209,25 @@ if input_question:
                 # Get summary for the retrieved data
                 customer_messages = prompt_template.format_messages(
                     question=input_question,
+                    texts=corrected_texts_list[:20])
+
+                customer_messages_short = prompt_template.format_messages(
+                    question=input_question,
                     texts=corrected_texts_list)
 
                 # Print GPT summary
                 st.markdown(f'### This is a summary for your question:')
 
-                with callbacks.collect_runs() as cb:
-                    st.write_stream(llm_chat.stream(customer_messages))
-                    run_id = cb.traced_runs[0].id
+                try:
+                    with callbacks.collect_runs() as cb:
+                        st.write_stream(llm_chat.stream(customer_messages))
+                        run_id = cb.traced_runs[0].id
+                except Exception as e:
+                    st.write("The texts were too long, we took first 20 for analysis.")
+                    with callbacks.collect_runs() as cb:
+                        st.write_stream(llm_chat.stream(customer_messages_short))
+                        run_id = cb.traced_runs[0].id
+
 
                 # st.markdown(content)
                 st.write('******************')
@@ -230,8 +241,8 @@ if input_question:
 
                 # Send rating to Tally
                 execution_time = round(end_time - start_time, 2)
-                tally_form_url = f'https://tally.so/embed/mR4WxQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&run_id={run_id}&time={execution_time}'
-                components.iframe(tally_form_url, width=700, height=800, scrolling=True)
+                # tally_form_url = f'https://tally.so/embed/mR4WxQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&run_id={run_id}&time={execution_time}'
+                # components.iframe(tally_form_url, width=700, height=800, scrolling=True)
 
 
             except BadRequestError as e:
