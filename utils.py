@@ -50,8 +50,7 @@ index_options = [
     'dm-media-presenters-facebook',
     'dm-media-presenters-telegram',
     'dm-media-presenters-youtube',
-    'dm-media-presenters-instagram',
-    'dm-media-presenters-tiktok'
+    'dm-media-presenters-instagram'
 ]
 
 project_indexes = {
@@ -59,8 +58,7 @@ project_indexes = {
         'dm-media-presenters-facebook',
         'dm-media-presenters-telegram',
         'dm-media-presenters-youtube',
-        'dm-media-presenters-instagram',
-        'dm-media-presenters-tiktok'
+        'dm-media-presenters-instagram'
     ]
 }
 

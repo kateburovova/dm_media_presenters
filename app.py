@@ -74,8 +74,7 @@ index_display_mapping = {
     "facebook": "dm-media-presenters-facebook",
     "telegram": "dm-media-presenters-telegram",
     "youtube": "dm-media-presenters-youtube",
-    'instagram': "dm-media-presenters-instagram",
-    'tiktok': 'dm-media-presenters-tiktok'
+    'instagram': "dm-media-presenters-instagram"
 }
 
 selected_indexes = []
