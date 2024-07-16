@@ -76,10 +76,10 @@ Solution: Press the “Yes, get this app back up!”. This is expected behaviour
 
 3️⃣ You see an error in red.
 
-Solution: Try reloading the page. If that does not solve the issue, please [submit your request by filling the Request Form out (type of request - LD app Technical issue)](https://docs.google.com/forms/d/e/1FAIpQLSfZTr4YoXXsjOOIAMVGYCeGgXd6LOsCQusctJ7hZODaW5HzGQ/viewform?usp=sf_link).
+Solution: Try reloading the page. If that does not solve the issue, please [submit your request by filling the Request Form out (type of request - AI Chatbot)](https://docs.google.com/forms/d/e/1FAIpQLSfZTr4YoXXsjOOIAMVGYCeGgXd6LOsCQusctJ7hZODaW5HzGQ/viewform?usp=sf_link).
 
 ### Feedback and support
 
-1️⃣ To report any technical issues, please [submit your request by filling the Request Form out (type of request - LD app Technical issue)](https://docs.google.com/forms/d/e/1FAIpQLSfZTr4YoXXsjOOIAMVGYCeGgXd6LOsCQusctJ7hZODaW5HzGQ/viewform?usp=sf_link).
+1️⃣ To report any technical issues, please [submit your request by filling the Request Form out (type of request - AI Chatbot)](https://docs.google.com/forms/d/e/1FAIpQLSfZTr4YoXXsjOOIAMVGYCeGgXd6LOsCQusctJ7hZODaW5HzGQ/viewform?usp=sf_link).
 
 2️⃣ At the bottom of the page (after the search results) the Feedback Form for your evaluation of the app’s performance is available. We value your feedback.
